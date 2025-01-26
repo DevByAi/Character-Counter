@@ -1,0 +1,40 @@
+const translations = {
+    he: {
+        title: 'ספירת תווים',
+        placeholder: 'הדבק או הקלד את הטקסט כאן...',
+        charCount: 'ספירת תווים',
+        readingTime: 'זמן קריאה משוער',
+        speakingTime: 'זמן דיבור משוער',
+        seconds: 'שניות',
+        minutes: 'דקות',
+        hours: 'שעות',
+        darkModeLabel: 'מצב חשוך',
+        languageLabel: 'החלף שפה',
+        readingExplanation: 'קריאה בעיניים - כ-5 תווים לשנייה (300 תווים לדקה)',
+        speakingExplanation: 'קריאה בקול - כ-3 תווים לשנייה (180 תווים לדקה)',
+        withSpaces: 'כולל רווחים',
+        withoutSpaces: 'ללא רווחים',
+        spaceToggleOn: 'ספירה ללא רווחים',
+        spaceToggleOff: 'ספירה כולל רווחים',
+        clearText: 'נקה טקסט'
+    },
+    en: {
+        title: 'Character Counter',
+        placeholder: 'Paste or type your text here...',
+        charCount: 'Character Count',
+        readingTime: 'Estimated Reading Time',
+        speakingTime: 'Estimated Speaking Time',
+        seconds: 'seconds',
+        minutes: 'minutes',
+        hours: 'hours',
+        darkModeLabel: 'Dark Mode',
+        languageLabel: 'Change Language',
+        readingExplanation: 'Silent reading - about 5 characters per second (300 per minute)',
+        speakingExplanation: 'Reading aloud - about 3 characters per second (180 per minute)',
+        withSpaces: 'Including spaces',
+        withoutSpaces: 'Excluding spaces',
+        spaceToggleOn: 'Count without spaces',
+        spaceToggleOff: 'Count including spaces',
+        clearText: 'Clear Text'
+    }
+}; 

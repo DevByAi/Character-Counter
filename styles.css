@@ -1,0 +1,409 @@
+:root {
+    --primary-color: #007bff;
+    --background-light: #f4f4f4;
+    --text-light: #333;
+    --container-light: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-light);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: var(--container-light);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 80px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    resize: vertical;
+    transition: border 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat-box {
+    background: rgba(0, 123, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.header-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+    direction: ltr !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 65px;
+    height: 32px;
+    min-width: 65px;
+    direction: ltr !important;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(33px);
+}
+
+.slider-icon {
+    position: absolute;
+    font-size: 20px;
+    line-height: 1;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider-icon.left {
+    left: 8px;
+    opacity: 1;
+}
+
+.slider-icon.right {
+    right: 8px;
+    opacity: 0;
+}
+
+input:checked + .slider .slider-icon.left {
+    opacity: 0;
+}
+
+input:checked + .slider .slider-icon.right {
+    opacity: 1;
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.dark-mode .container {
+    background: #2d2d2d;
+    color: #fff;
+}
+
+.dark-mode textarea {
+    background: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+.dark-mode .stat-box {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.explanation {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+.dark-mode .explanation {
+    color: #aaa;
+}
+
+.space-toggle-btn,
+.clear-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin: 0;
+    flex: 1;
+    max-width: 200px;
+}
+
+.space-toggle-btn:hover,
+.clear-btn:hover {
+    transform: translateY(-2px);
+}
+
+.space-toggle-btn:hover {
+    background: #0056b3;
+}
+
+.clear-btn:hover {
+    background: #dc3545;
+}
+
+.dark-mode .space-toggle-btn {
+    background: #555;
+}
+
+.dark-mode .clear-btn {
+    background: #bd2130;
+}
+
+.dark-mode .space-toggle-btn:hover {
+    background: #666;
+}
+
+.dark-mode .clear-btn:hover {
+    background: #a71d2a;
+}
+
+#title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* General mobile styles */
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: calc(100% - 20px);
+        padding: 15px;
+        margin: 60px 10px 20px 10px;
+        border-radius: 10px;
+    }
+
+    textarea {
+        font-size: 16px !important; /* Combined with iOS fix */
+        height: 120px;
+        padding: 12px;
+    }
+
+    /* Stats layout */
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-box {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Controls */
+    .header-controls {
+        top: 15px;
+        right: 15px;
+        gap: 20px;
+    }
+
+    .switch {
+        width: 70px;
+        min-width: 70px;
+    }
+
+    .slider-icon {
+        font-size: 22px;
+    }
+
+    /* Button and text */
+    .space-toggle-btn,
+    .clear-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #title {
+        font-size: 20px;
+        margin: 10px 0 15px 0;
+    }
+
+    .explanation {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* Dark mode specific */
+    .dark-mode .container {
+        background: #222;
+    }
+
+    .dark-mode textarea {
+        background: #2d2d2d;
+    }
+
+    .dark-mode .stat-box {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .space-toggle-btn,
+    .clear-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Small phones refinements */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 12px;
+        margin-top: 50px;
+    }
+
+    .header-controls {
+        top: 12px;
+        right: 12px;
+        gap: 15px;
+    }
+
+    .switch {
+        width: 65px;
+        min-width: 65px;
+    }
+
+    .slider-icon {
+        font-size: 20px;
+    }
+
+    .stat-box {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .space-toggle-btn,
+    .clear-btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    #title {
+        font-size: 18px;
+    }
+
+    .explanation {
+        font-size: 10px;
+    }
+}
+
+/* Landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        margin-top: 50px;
+    }
+
+    textarea {
+        height: 80px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .header-controls {
+        top: 5px;
+    }
+}
+
+/* Notched phones support */
+@supports (padding-top: env(safe-area-inset-top)) {
+    body {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) 
+                env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+
+    .header-controls {
+        top: calc(10px + env(safe-area-inset-top));
+    }
+}
+
+/* Fix for iOS input zoom */
+@media screen and (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px auto 0;
+    width: 100%;
+    max-width: 600px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Character Counter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-controls">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+            <span class="slider">
+                <span class="slider-icon left">🌞</span>
+                <span class="slider-icon right">🌙</span>
+            </span>
+        </label>
+        <label class="switch">
+            <input type="checkbox" id="languageToggle" onclick="toggleLanguage()">
+            <span class="slider">
+                <span class="slider-icon left">🇮🇱</span>
+                <span class="slider-icon right">🇺🇸</span>
+            </span>
+        </label>
+    </div>
+
+    <div class="container">
+        <h2 id="title">ספירת תווים</h2>
+        <textarea id="textInput" placeholder="הדבק או הקלד את הטקסט כאן..."></textarea>
+        <div class="button-container">
+            <button class="space-toggle-btn" onclick="toggleSpaces()" id="spaceToggleBtn"></button>
+            <button class="clear-btn" onclick="clearText()" id="clearBtn"></button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <p><span id="charCountLabel">ספירת תווים</span>: <span id="charCount">0</span></p>
+            </div>
+            <div class="stat-box">
+                <p><span id="readingTimeLabel">זמן קריאה משוער</span>: <span id="readingTime">0</span> <span id="readingTimeUnit">שניות</span></p>
+                <small id="readingExplanation" class="explanation"></small>
+            </div>
+            <div class="stat-box">
+                <p><span id="speakingTimeLabel">זמן דיבור משוער</span>: <span id="speakingTime">0</span> <span id="speakingTimeUnit">שניות</span></p>
+                <small id="speakingExplanation" class="explanation"></small>
+            </div>
+        </div>
+    </div>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
